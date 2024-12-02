@@ -19,19 +19,25 @@ graph TD;
 
 #### Function Diagrams
 
-| `main`    |               |  author     |
+| `main`    |               |  Abby     |
 | ------------------ | ------------- | ------------ |
 | `argument:type`    | takes input from the user for ____  |              |
 | `time:integer`     | calculates ______  | outputs ____             |
 | `name:string`      | takes input for name ___ | returns total |
 ***
-| `function name2`    |               |     author   |
+| `function name1`    |               |     Mason   |
+| ------------------ | ------------- | ------------ |
+| `argument:type`    | takes input from the user for seat prices for each row  |              |
+| `time:integer`     | calculates N/A  | outputs prices              |
+| `name:string`      | takes input for price | returns price |
+***
+| `function name2`    |               |     Abby   |
 | ------------------ | ------------- | ------------ |
 | `argument:type`    | takes input from the user for ____  |              |
 | `time:integer`     | calculates ______  | outputs ____             |
 | `name:string`      | takes input for name ___ | returns total |
 ***
-| `function name3`    |               |     author   |
+| `function name3`    |               |     Julian   |
 | ------------------ | ------------- | ------------ |
 | `argument:type`    | takes input from the user for ____  |              |
 | `time:integer`     | calculates ______  | outputs ____             |
