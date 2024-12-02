@@ -9,7 +9,31 @@
 
 using namespace std;
 
-void mason();
+void Mason();
 void Abby();
 void Jullian();
-void seb();
+void Seb();
+
+int main()
+{
+  Mason();
+  Abby();
+  Jullian();
+  Seb();
+}
+void Mason()
+{
+  
+}
+void Abby()
+{
+
+}
+void Jullain()
+{
+
+}
+void Seb()
+{
+
+}
