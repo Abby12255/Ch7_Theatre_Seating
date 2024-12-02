@@ -33,8 +33,8 @@ graph TD;
 ***
 | `function name2`    |               |     Abby   |
 | ------------------ | ------------- | ------------ |
-| `argument:type`    | takes input from the user for ____  |              |
-| `time:integer`     | calculates ______  | outputs ____             |
+| `argument:type`    | takes input from the user for tickets being sold  |              |
+| `time:integer`     | calculates N/A  | outputs new seating chart             |
 | `name:string`      | takes input for name ___ | returns total |
 ***
 | `function name3`    |               |     Julian   |
