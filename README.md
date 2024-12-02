@@ -31,5 +31,17 @@ graph TD;
 | `time:integer`     | calculates ______  | outputs ____             |
 | `name:string`      | takes input for name ___ | returns total |
 ***
+| `function name3`    |               |     author   |
+| ------------------ | ------------- | ------------ |
+| `argument:type`    | takes input from the user for ____  |              |
+| `time:integer`     | calculates ______  | outputs ____             |
+| `name:string`      | takes input for name ___ | returns total |
+***
+| `listofsoldseats`    |               |     Seb   |
+| ------------------ | ------------- | ------------ |
+| `argument:type`    | takes input from the user for if they want to see sold seats  |              |
+| `time:integer`     | calculates total seats sold  | outputs amount of open seats            |
+| `name:string`      | takes input for name ___ | returns total |
+***
 
 
