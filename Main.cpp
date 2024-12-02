@@ -14,6 +14,11 @@ void Abby();
 void Jullian();
 void Seb();
 
+/*
+<function name> accepts __ arguments
+<describe what it does>
+<describe what it outputs or returns>
+*/
 int main()
 {
   Mason();
@@ -21,18 +26,38 @@ int main()
   Jullian();
   Seb();
 }
+/*
+<function name> accepts __ arguments
+<describe what it does>
+<describe what it outputs or returns>
+*/
 void Mason()
 {
   
 }
+/*
+<function name> accepts __ arguments
+<describe what it does>
+<describe what it outputs or returns>
+*/
 void Abby()
 {
 
 }
+/*
+<function name> accepts __ arguments
+<describe what it does>
+<describe what it outputs or returns>
+*/
 void Jullain()
 {
 
 }
+/*
+<function name> accepts __ arguments
+<describe what it does>
+<describe what it outputs or returns>
+*/
 void Seb()
 {
 
