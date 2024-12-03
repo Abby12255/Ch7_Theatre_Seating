@@ -22,8 +22,8 @@ graph TD;
 | `main`    |               |  Abby     |
 | ------------------ | ------------- | ------------ |
 | `argument:type`    | takes input from the user for ____  |              |
-| `time:integer`     | calculates ______  | outputs ____             |
-| `name:string`      | takes input for name ___ | returns total |
+| `something:sometype`     | calculates ______  | outputs ____             |
+| `something:sometype`      | takes input for name ___ | returns total |
 ***
 | `function name1`    |               |     Mason   |
 | ------------------ | ------------- | ------------ |
