@@ -1,5 +1,5 @@
 # Theater Seating
-Julian, Mason, Seb, Abby
+Jullian, Mason, Seb, Abby
 
 ## Theater Seating Description
 program that can be used by a theater to sell tickets for performances.  The theater’s auditorium has 15 rows of seats, with 30 seats in each row.  The program should display a screen that shows which seats are available and which are taken.  For example, the following graphic shows a chart depicting each seat in the theater.  Seats that are taken are represented by * symbol, and seats that are available are represented by a # symbol.
