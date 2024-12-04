@@ -9,7 +9,7 @@
 
 using namespace std;
 
-void Mason();
+void Mason(int numbers[], int size);
 void Abby();
 void Jullian();
 void Seb();
@@ -21,13 +21,20 @@ void Seb();
 */
 int main()
 {
-  Mason();
-  Abby();
-  Jullian();
-  Seb();
+    const int size = 15;
+    int numbers[size];
+
+    // Call Mason to populate the array
+    Mason(numbers, size);
+
+    Abby();
+    Jullian();
+    Seb();
+
+    return 0;
 }
 
-void Mason()
+void Mason(int numbers[], int size) 
 {
   /*
   Mason accepts no arguments
@@ -35,19 +42,13 @@ void Mason()
   return row price as array to main
   */
 
-  // defining array size
-  int size = 15;
-  // defining array of size "size"
-  int numbers[size];
-
   // using loop to move to every array element and then using cin to insert the value given by user to the array element
   for (int count = 0; count < size; count++) 
   {
-      cout << "Enter a number: ";
+      cout << "Please enter ticket price for Row "<<count+1<<": ";
       cin >> numbers[count];
   }
-  
-  return numbers;
+  cout << endl;
 }
   
 /*
@@ -64,7 +65,7 @@ void Abby()
 <describe what it does>
 <describe what it outputs or returns>
 */
-void Jullain()
+void Jullian()
 {
 
 }
