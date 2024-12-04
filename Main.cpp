@@ -36,25 +36,17 @@ void Mason()
   */
 
   // defining array size
-  int size = 5;
+  int size = 15;
   // defining array of size "size"
   int numbers[size];
 
-  // using loop to move to every array element and then
-  // using either cin to insert the value given by the
-  // user to the array element
+  // using loop to move to every array element and then using cin to insert the value given by user to the array element
   for (int count = 0; count < size; count++) 
   {
       cout << "Enter a number: ";
       cin >> numbers[count];
   }
-
-  // Print the array elements
-  cout << "The array elements are: ";
-  for (int count = 0; count < size; count++) {
-      cout << numbers[count] << " ";
-  }
-
+  
   return numbers;
 }
   
