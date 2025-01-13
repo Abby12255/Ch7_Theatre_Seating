@@ -42,7 +42,9 @@ void Mason(int numbers[], int size)
   return row price as array to main
   */
 
-  // using loop to move to every array element and then using cin to insert the value given by user to the array element
+  // using loop to move to every array element and 
+  // then using cin to insert the value given by 
+  // user to the array element
   for (int count = 0; count < size; count++) 
   {
       cout << "Please enter ticket price for Row "<<count+1<<": ";
