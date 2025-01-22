@@ -127,17 +127,18 @@ void viewSeats(char seatChart[][COLS])
         {
             cout << seatChart[counter1][counter2]; // prints each item
             // Finds number of sold and unsold seats
-            if (seatChart[counter1][counter2] == "#")
+            if (seatChart[counter1][counter2] == '#')
               {
                   notsold++;
               }
-              else
-              {
-                  soldseats++;
+            else
+            {
+                soldseats++;
+            }
         }
     }
-    cout << "\n\n\t Legend: * = Sold\n\t\t # = Available\n"; // prints legend
-    cout << "there are " << soldseats << " sold seats\nthere are " << notsold << " seats available\n";
+    cout << "\n\n\t Legend: * = Sold\n\t\t # = Available\n\n"; // prints legend
+    cout << "there are " << soldseats << " sold seat(s)\nthere are " << notsold << " seat(s) available\n";
 }
 
 void viewPrices(int prices[])
@@ -220,7 +221,14 @@ void purchaseTicket(int prices[], char seatChart[][COLS]) //Add ticket cost at t
         // Checks if the index is valid
         if (row < 1 || row > 15 || column < 1 || column > 30)
         {
-            cout << "Invalid row or column number!" << endl;
+            cout << "\nInvalid row or column number!\n" << endl;
+            continue;
+        }
+
+        // Checks if seat has already been taken
+        if (seatChart[row - 1][column - 1] == '*')
+        {
+            cout << "\nThis seat has already been sold\n" << endl;
             continue;
         }
 
