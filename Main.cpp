@@ -6,6 +6,7 @@
 #include <ctime>
 #include <fstream>
 #include <algorithm>
+#include <fstream>
 
 using namespace std;
 
@@ -26,6 +27,7 @@ void purchaseTicket(int numbers[], char seatChart[][COLS]);
 */
 int main()
 {
+
     //Chart Initialization
     //const int chartSize = 450;
     char seatChart[ROWS][COLS];
@@ -103,7 +105,9 @@ void viewSeats(char seatChart[][COLS])
     <it formats and prints the seatChart array>
     <it returns nothing> 
     */
-
+  
+    int soldseats = 0, notsold = 0; // Variables for sold seats
+  
     // Diplaying seat chart
     cout << "\n\t\tSeats\n       123456789012345678901234567890";
 
@@ -122,9 +126,18 @@ void viewSeats(char seatChart[][COLS])
         for (int counter2 = 0; counter2 < COLS; counter2++) // Columns
         {
             cout << seatChart[counter1][counter2]; // prints each item
+            // Finds number of sold and unsold seats
+            if (seatChart[counter1][counter2] == "#")
+              {
+                  notsold++;
+              }
+              else
+              {
+                  soldseats++;
         }
     }
     cout << "\n\n\t Legend: * = Sold\n\t\t # = Available\n"; // prints legend
+    cout << "there are " << soldseats << " sold seats\nthere are " << notsold << " seats available\n";
 }
 
 void viewPrices(int prices[])
@@ -144,8 +157,15 @@ void viewPrices(int prices[])
 
 void viewSales(char seatChart[][COLS], int numbers[])
 {
+    /*
+    <viewSales> accepts 2 arguments
+    <It finds the number of tickets sold and the amount earned>
+    <and displays it>
+    <It returns nothing>
+    */
+  
     int ticketSales = 0, Earnings = 0, variable;
-
+  
     // Uses the seating chart to check how many tickets have been sold
     // Then uses the pricing chart (numbers) to determine how much the seats cost
     for (int counter1 = 0; counter1 < ROWS; counter1++)
