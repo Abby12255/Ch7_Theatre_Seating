@@ -9,15 +9,15 @@
 
 using namespace std;
 
-void inputPrices(int numbers[], int size);
-void viewSeats();
-void viewPrices(int numbers[]);
-void viewSales();
-void purchaseTicket(int numbers[]);
+// Constant Variables for seatChart
+const int ROWS = 15;
+const int COLS = 30;
 
-//Global variables
-const int chartSize = 450;
-char seatChart[chartSize];
+void inputPrices(int numbers[], int size);
+void viewSeats(char seatChart[][COLS]);
+void viewPrices(int numbers[]);
+void viewSales(char seatChart[][COLS], int numbers[]);
+void purchaseTicket(int numbers[], char seatChart[][COLS]);
 
 /*
 <function name> accepts __ arguments
@@ -26,16 +26,24 @@ char seatChart[chartSize];
 */
 int main()
 {
+    //Chart Initialization
+    //const int chartSize = 450;
+    char seatChart[ROWS][COLS];
+
+    // Variables for inputPrices
     const int size = 15;
     int numbers[size], choice;
     
-    // Initializes the seating list
-    for (int counter = 0; counter <= chartSize; counter++)
+    // Initializes the seating list; using for loops
+    for (int counter1 = 0; counter1 < ROWS; counter1++)
     {
-        seatChart[counter] = '#';
+        for (int counter2 = 0; counter2 < COLS; counter2++)
+        {
+            seatChart[counter1][counter2] = '#';
+        }
     }
 
-    // Call inputPrices to populate the array
+    // Calls inputPrices
     inputPrices(numbers, size);
 
     // Loop displays menu, takes input, and calls other programs accordingly
@@ -52,7 +60,7 @@ int main()
 
         if (choice == 1)
         {
-            viewSeats();
+            viewSeats(seatChart);
         }
         else if (choice == 2)
         {
@@ -60,11 +68,11 @@ int main()
         }
         else if (choice == 3)
         {
-            viewSales();
+            viewSales(seatChart, numbers);
         }
         else if (choice == 4)
         {
-            purchaseTicket(numbers);
+            purchaseTicket(numbers, seatChart);
         }
     } while (choice != 5);
 
@@ -88,42 +96,33 @@ void inputPrices(int numbers[], int size)
   cout << endl;
 }
 
-void viewSeats()
+void viewSeats(char seatChart[][COLS])
 {
     /* 
-    <viewSeats> accepts no arguments
+    <viewSeats> accepts 1 arguments
     <it formats and prints the seatChart array>
     <it returns nothing> 
     */
-
-    int rowEnd= 1;
 
     // Diplaying seat chart
     cout << "\n\t\tSeats\n       123456789012345678901234567890";
 
     // Loop displays and formats the entire seatChart list 
-    for (int counter = 0; counter <= (chartSize - 1); counter++)
+    for (int counter1 = 0; counter1 < ROWS; counter1++) // Rows
     {
-        // If statement seperates each row and labels them
-        if (counter == 0 ||
-            counter == 30 || counter == 60 || counter == 90 ||
-            counter == 120 || counter == 150 || counter == 180 ||
-            counter == 210 || counter == 240 || counter == 270 ||
-            counter == 300 || counter == 330 || counter == 360 ||
-            counter == 390 || counter == 420 || counter == 450)
+        if (counter1 >= 9) // deducts a space when row names are in the double digits
         {
-            if (rowEnd > 9) // deducts a space when row names are in the double digits
-            {
-                cout << endl << "Row " << rowEnd << " ";
-                rowEnd++;
-            }
-            else
-            {
-                cout << endl << "Row  " << rowEnd << " ";
-                rowEnd++;
-            }
+            cout << endl << "Row " << counter1 + 1 << " ";
         }
-        cout << seatChart[counter]; // prints each item
+        else
+        {
+            cout << endl << "Row  " << counter1 + 1 << " ";
+        }
+
+        for (int counter2 = 0; counter2 < COLS; counter2++) // Columns
+        {
+            cout << seatChart[counter1][counter2]; // prints each item
+        }
     }
     cout << "\n\n\t Legend: * = Sold\n\t\t # = Available\n"; // prints legend
 }
@@ -143,13 +142,31 @@ void viewPrices(int prices[])
     }
 }
 
-void viewSales()
+void viewSales(char seatChart[][COLS], int numbers[])
 {
+    int ticketSales = 0, Earnings = 0, variable;
 
+    // Uses the seating chart to check how many tickets have been sold
+    // Then uses the pricing chart (numbers) to determine how much the seats cost
+    for (int counter1 = 0; counter1 < ROWS; counter1++)
+    {
+        for (int counter2 = 0; counter2 < COLS; counter2++)
+        {
+            variable = seatChart[counter1][counter2];
 
+            if (variable == '*')
+            {
+                ticketSales += 1;
+                Earnings += numbers[counter1];
+            }
+        }
+    }
+    // Output
+    cout << "\nA total of " << ticketSales << " tickets have been sold";
+    cout << "\nTotal revenue: $" << Earnings;
 }
 
-void purchaseTicket(int prices[]) //Add ticket cost at the end
+void purchaseTicket(int prices[], char seatChart[][COLS]) //Add ticket cost at the end
 {
     /*
     purchaseTicket accepts 1 arguments
@@ -171,7 +188,7 @@ void purchaseTicket(int prices[]) //Add ticket cost at the end
         // Calls viewSeats to display the selection
         if (choice == "y")
         {
-            viewSeats();
+            viewSeats(seatChart);
         }
 
         // Asks user for input for row and column
@@ -188,7 +205,7 @@ void purchaseTicket(int prices[]) //Add ticket cost at the end
         }
 
         // Updates the array accordingly using user input
-        seatChart[(row - 1) * 30 + (column - 1)] = '*';
+        seatChart[row - 1][column - 1] = '*';
         ticket++;
         money += prices[row - 1];
 
@@ -203,4 +220,3 @@ void purchaseTicket(int prices[]) //Add ticket cost at the end
     cout << "You have purchased a total of " << ticket
         << " tickets for a total price of $" << money;
 }
-
